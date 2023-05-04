@@ -20,7 +20,7 @@ const Reservation = () => {
         <div className="w-1/2 p-10 text-center">
           <form>
             <input
-              className="border-black border px-9 py-3"
+              className="border-black border px-9 py-3 rounded-lg"
               type="text"
               name="name"
               id="name"
@@ -28,7 +28,7 @@ const Reservation = () => {
             />
             <br />
             <input
-              className="border-black border my-3 px-9 py-3"
+              className="border-black border my-3 px-9 py-3 rounded-lg"
               type="email"
               name="email"
               id="email"
@@ -36,7 +36,7 @@ const Reservation = () => {
             />
             <br />
             <input
-              className="border-black border px-9 py-3"
+              className="border-black border px-9 py-3 rounded-lg"
               type="text"
               name="phone"
               id="phone"
@@ -44,7 +44,7 @@ const Reservation = () => {
             />
             <br />
             <input
-              className="border-black border my-3 px-9 py-3"
+              className="border-black border my-3 px-9 py-3 rounded-lg"
               type="text"
               name="date"
               id="date"
@@ -52,7 +52,7 @@ const Reservation = () => {
             />
             <br />
             <input
-              className="border-black border px-9 py-3"
+              className="border-black border px-9 py-3 rounded-lg"
               type="text"
               name="time"
               id="time"
