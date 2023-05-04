@@ -10,6 +10,7 @@ const Header = () => {
       .then()
       .catcht((error) => console.log(error));
   };
+  console.log(user);
   return (
     <div className="max-w-[1440px] px-[4%] mx-auto mt-2 mb-6">
       <div className="navbar bg-base-100">
@@ -36,10 +37,10 @@ const Header = () => {
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <a>Item 1</a>
+                <Link to="/">Home</Link>
               </li>
               <li>
-                <a>Item 1</a>
+                <Link to="/blog">Blog</Link>
               </li>
               <li>
                 <a>Item 3</a>
@@ -87,16 +88,27 @@ const Header = () => {
         </div>
         <div className="navbar-end">
           {user && (
-            <div className="w-10 h-10 rounded-full">
-              <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" />
+            <div
+              className="avatar tooltip tooltip-bottom"
+              data-tip={user.displayName}
+            >
+              <div className="w-12 rounded-full">
+                <img src={user.photoURL} />
+              </div>
             </div>
           )}
           {user ? (
-            <Link onClick={handleLogOut} className="btn">
+            <Link
+              onClick={handleLogOut}
+              className="ml-4 bg-primary px-4 py-2 rounded-lg hover:transform hover:scale-110 transition-all"
+            >
               Logout
             </Link>
           ) : (
-            <Link to="/login" className="btn">
+            <Link
+              to="/login"
+              className="ml-4 bg-secondary px-4 py-2 rounded-lg hover:transform hover:scale-110 transition-all"
+            >
               Login
             </Link>
           )}

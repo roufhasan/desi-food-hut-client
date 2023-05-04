@@ -4,7 +4,7 @@ import { AuthContext } from "../../../providers/AuthProvider";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 
 const Login = () => {
-  const { signIn } = useContext(AuthContext);
+  const { signIn, signInWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   console.log(location);
@@ -25,6 +25,18 @@ const Login = () => {
         navigate(from, { replace: true });
       })
       .catch((error) => console.log(error));
+  };
+
+  const handleGoogleLogin = () => {
+    signInWithGoogle()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        console.log(errorMessage);
+      });
   };
 
   return (
@@ -58,7 +70,9 @@ const Login = () => {
       <div className="mt-6">
         <div className="divider">OR</div>
         <div className="text-3xl flex gap-x-5 justify-center">
-          <FaGoogle></FaGoogle>
+          <button onClick={handleGoogleLogin}>
+            <FaGoogle></FaGoogle>
+          </button>
           <FaGithub></FaGithub>
         </div>
         <p className="mt-12 text-center mb-20">
