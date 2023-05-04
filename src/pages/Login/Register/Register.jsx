@@ -24,51 +24,58 @@ const Register = () => {
   };
 
   return (
-    <form onSubmit={handleRegister} className="text-center my-12">
-      <input
-        className="border-2 border-green-500"
-        type="text"
-        name="name"
-        id="name"
-        placeholder="Name"
-        required
-      />
-      <br />
-      <input
-        className="border-2 border-green-500"
-        type="email"
-        name="email"
-        id="email"
-        placeholder="Please input your email"
-        required
-      />
-      <br />
-      <input
-        className="border-2 border-green-500 my-4"
-        type="password"
-        name="password"
-        id="password"
-        placeholder="password"
-        required
-      />
-      <br />
-      <input
-        className="border-2 border-green-500 my-4"
-        type="text"
-        name="photoUrl"
-        id="photUrl"
-        placeholder="Photo Link"
-        required
-      />
-      <br />
-      <button className="btn btn-primary">Register</button>
-      <p>
-        Already have an account please
-        <Link to="/login" className="text-red-500">
+    <div className="w-1/4 mx-auto">
+      <h2 className="text-4xl font-semibold text-center mt-20 mb-12">
+        Sign Up
+      </h2>
+      <form onSubmit={handleRegister} className="text-center">
+        <input
+          className="bg-gray-200 text-gray-800 pl-3 pr-24 py-3"
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Name"
+          required
+        />
+        <br />
+        <input
+          className="bg-gray-200 text-gray-800 pl-3 pr-24 py-3 my-4"
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Please input your email"
+          required
+        />
+        <br />
+        <input
+          className="bg-gray-200 text-gray-800 pl-3 pr-24 py-3"
+          type="password"
+          name="password"
+          id="password"
+          placeholder="password"
+          required
+        />
+        <br />
+        <input
+          className="bg-gray-200 text-gray-800 pl-3 pr-24 py-3 my-4"
+          type="text"
+          name="photoUrl"
+          id="photUrl"
+          placeholder="Photo Link"
+          required
+        />
+        <br />
+        <button className="px-20 bg-primary py-3 rounded-full text-lg hover:bg-green-500 transition ease-in duration-300">
+          Sign Up
+        </button>
+      </form>
+      <p className="mt-12 text-center mb-20">
+        Already have an account?{" "}
+        <Link to="/login" className="text-secondary">
           Login
         </Link>
       </p>
-    </form>
+    </div>
   );
 };
 
