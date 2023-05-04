@@ -3,7 +3,13 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 const Header = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then()
+      .catcht((error) => console.log(error));
+  };
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -85,7 +91,9 @@ const Header = () => {
           </div>
         )}
         {user ? (
-          <Link className="btn">Logout</Link>
+          <Link onClick={handleLogOut} className="btn">
+            Logout
+          </Link>
         ) : (
           <Link to="/login" className="btn">
             Login

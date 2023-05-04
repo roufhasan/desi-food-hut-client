@@ -18,7 +18,7 @@ const Chef = ({ chef }) => {
           <FaHeart className="text-red-600" /> {likes}
         </p>
         <div className="card-actions">
-          <Link to={`/chefs/${id}`}>
+          <Link to={`/chefsRecipe/${id}`}>
             <button className="btn btn-primary">
               Show Details <FaArrowRight className="ml-2" />
             </button>
