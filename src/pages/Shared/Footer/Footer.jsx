@@ -36,14 +36,22 @@ const Footer = () => {
       </div>
       <div>
         <span className="footer-title opacity-100">Contact</span>
-        <Link className="link link-hover flex gap-x-2 items-center">
+        <Link
+          to={
+            "https://www.google.com/maps/place/Puran+Dhaka+Chowk+Bazar/@23.7165512,90.39333,17z/data=!3m1!4b1!4m6!3m5!1s0x3755b9b5ecb14973:0x7681a2f59d2f7813!8m2!3d23.7165463!4d90.3959049!16s%2Fg%2F11t9t9z9fz"
+          }
+          className="link link-hover flex gap-x-2 items-center"
+        >
           <FaMapMarkerAlt></FaMapMarkerAlt>787 Mark View Street, New Town,
           California
         </Link>
-        <Link className="link link-hover flex gap-x-2 items-center">
+        <Link
+          to={"https://mail.google.com/"}
+          className="link link-hover flex gap-x-2 items-center"
+        >
           <FaPaperPlane></FaPaperPlane> needhelp@thatix.com
         </Link>
-        <Link className="link link-hover flex gap-x-2 items-center">
+        <Link to="/" className="link link-hover flex gap-x-2 items-center">
           <FaPhoneAlt></FaPhoneAlt>666 888 0000
         </Link>
       </div>
