@@ -1,9 +1,30 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 const Register = () => {
+  const { createUser } = useContext(AuthContext);
+
+  const handleRegister = (event) => {
+    event.preventDefault();
+
+    const form = event.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const photoUrl = form.photoUrl.value;
+
+    console.log(name, email, password, photoUrl);
+    createUser(email, password)
+      .then((result) => {
+        const createdUser = result.user;
+        console.log(createdUser);
+      })
+      .catch((error) => console.log(error));
+  };
+
   return (
-    <form className="text-center my-12">
+    <form onSubmit={handleRegister} className="text-center my-12">
       <input
         className="border-2 border-green-500"
         type="text"
@@ -40,11 +61,11 @@ const Register = () => {
         required
       />
       <br />
-      <button className="btn btn-primary">Log In</button>
+      <button className="btn btn-primary">Register</button>
       <p>
-        Don't have an account please
-        <Link to="/register" className="text-red-500">
-          Register
+        Already have an account please
+        <Link to="/login" className="text-red-500">
+          Login
         </Link>
       </p>
     </form>
