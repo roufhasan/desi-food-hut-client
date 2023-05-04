@@ -90,10 +90,10 @@ const Header = () => {
           {user && (
             <div
               className="avatar tooltip tooltip-bottom"
-              data-tip={user.displayName}
+              data-tip={user?.displayName}
             >
               <div className="w-12 rounded-full">
-                <img src={user.photoURL} />
+                <img src={user?.photoURL} />
               </div>
             </div>
           )}
@@ -107,7 +107,7 @@ const Header = () => {
           ) : (
             <Link
               to="/login"
-              className="ml-4 bg-secondary px-4 py-2 rounded-lg hover:transform hover:scale-110 transition-all"
+              className="ml-4 bg-primary px-4 py-2 rounded-lg hover:transform hover:scale-110 transition-all"
             >
               Login
             </Link>

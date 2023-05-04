@@ -65,13 +65,13 @@ const Register = () => {
           required
         />
         <br />
-        <button className="px-20 bg-primary py-3 rounded-full text-lg hover:bg-green-500 transition ease-in duration-300">
+        <button className="px-20 bg-green-500 py-3 rounded-full text-lg hover:bg-primary transition ease-in duration-300">
           Sign Up
         </button>
       </form>
       <p className="mt-12 text-center mb-20">
         Already have an account?{" "}
-        <Link to="/login" className="text-secondary">
+        <Link to="/login" className="text-primary">
           Login
         </Link>
       </p>

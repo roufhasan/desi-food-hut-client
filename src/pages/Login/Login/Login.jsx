@@ -4,7 +4,8 @@ import { AuthContext } from "../../../providers/AuthProvider";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 
 const Login = () => {
-  const { signIn, signInWithGoogle } = useContext(AuthContext);
+  const { signIn, signInWithGoogle, signInWithGithub } =
+    useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   console.log(location);
@@ -30,12 +31,25 @@ const Login = () => {
   const handleGoogleLogin = () => {
     signInWithGoogle()
       .then((result) => {
-        const user = result.user;
-        console.log(user);
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         const errorMessage = error.message;
         console.log(errorMessage);
+      });
+  };
+
+  const handleGithubLogin = () => {
+    signInWithGithub()
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.log(error);
       });
   };
 
@@ -73,7 +87,9 @@ const Login = () => {
           <button onClick={handleGoogleLogin}>
             <FaGoogle></FaGoogle>
           </button>
-          <FaGithub></FaGithub>
+          <button onClick={handleGithubLogin}>
+            <FaGithub></FaGithub>
+          </button>
         </div>
         <p className="mt-12 text-center mb-20">
           Don't have an account please?{" "}
