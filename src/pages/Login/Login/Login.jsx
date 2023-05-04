@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
+import { FaGithub, FaGoogle } from "react-icons/fa";
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
@@ -27,33 +28,47 @@ const Login = () => {
   };
 
   return (
-    <form onSubmit={handleLogin} className="text-center my-12">
-      <input
-        className="border-2 border-green-500"
-        type="email"
-        name="email"
-        id="email"
-        placeholder="Please input your email"
-        required
-      />
-      <br />
-      <input
-        className="border-2 border-green-500 my-4"
-        type="password"
-        name="password"
-        id="password"
-        placeholder="password"
-        required
-      />
-      <br />
-      <button className="btn btn-primary">Log In</button>
-      <p>
-        Don't have an account please
-        <Link to="/register" className="text-red-500">
-          Register
-        </Link>
-      </p>
-    </form>
+    <div className="w-1/4 mx-auto">
+      <h2 className="text-4xl font-semibold text-center mt-20 mb-12">
+        Sign In
+      </h2>
+      <form onSubmit={handleLogin} className="text-center">
+        <input
+          className="bg-gray-200 text-gray-800 pl-3 pr-24 py-3"
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Email"
+          required
+        />
+        <br />
+        <input
+          className="bg-gray-200 text-gray-800 pl-3 pr-24 py-3 my-4"
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Password"
+          required
+        />
+        <br />
+        <button className="px-20 bg-primary py-3 rounded-full text-lg hover:bg-green-500 transition ease-in duration-300">
+          Log In
+        </button>
+      </form>
+      <div className="mt-6">
+        <div className="divider">OR</div>
+        <div className="text-3xl flex gap-x-5 justify-center">
+          <FaGoogle></FaGoogle>
+          <FaGithub></FaGithub>
+        </div>
+        <p className="mt-12 text-center mb-20">
+          Don't have an account please?{" "}
+          <Link to="/register" className="text-secondary">
+            Register
+          </Link>
+        </p>
+      </div>
+    </div>
   );
 };
 
