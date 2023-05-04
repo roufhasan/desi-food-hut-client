@@ -6,10 +6,10 @@ import { Outlet } from "react-router-dom";
 const Main = () => {
   return (
     <div>
-      <div className="max-w-[1440px] px-[4%] mx-auto">
+      <div className="max-w-[1440px] px-[4%] mx-auto mt-2 mb-6">
         <Header></Header>
-        <Outlet></Outlet>
       </div>
+      <Outlet></Outlet>
       <Footer></Footer>
     </div>
   );

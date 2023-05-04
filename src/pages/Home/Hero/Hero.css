@@ -1,0 +1,10 @@
+#hero {
+  background: linear-gradient(
+      to right,
+      rgba(53, 45, 40, 0.507),
+      rgba(53, 45, 40, 0.507)
+    ),
+    url(../../../assets/banner.jpg);
+  object-fit: cover;
+  height: 87vh;
+}
