@@ -19,7 +19,9 @@ const Chef = ({ chef }) => {
         <h2 className="card-title text-2xl">{name}</h2>
         <p className="text-lg text-accent">{experience} year's of experience</p>
         <p>
-          <span className="text-lg font-medium">Toatl Recipes: </span>
+          <span className="text-lg font-medium">
+            Toatl Recipes: {recipes.length}
+          </span>
           {recipes.map((recipe) => (
             <li>{recipe.recipe_name},</li>
           ))}

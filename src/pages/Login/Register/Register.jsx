@@ -20,7 +20,9 @@ const Register = () => {
         const createdUser = result.user;
         console.log(createdUser);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (

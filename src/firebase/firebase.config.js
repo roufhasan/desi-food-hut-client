@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAAZgRB6unulECW4wESr_L2VvZ32faz0bw",
-  authDomain: "desi-food-hut.firebaseapp.com",
-  projectId: "desi-food-hut",
-  storageBucket: "desi-food-hut.appspot.com",
-  messagingSenderId: "152265813162",
-  appId: "1:152265813162:web:08780203f2a6bf35dc34d3",
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID,
 };
 
 // Initialize Firebase
