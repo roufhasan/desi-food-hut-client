@@ -1,10 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
   const navigate = useNavigate();
+
+  const [error, setError] = useState("");
 
   const handleRegister = (event) => {
     event.preventDefault();
@@ -15,14 +17,20 @@ const Register = () => {
     const password = form.password.value;
     const photoUrl = form.photoUrl.value;
 
+    if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password)) {
+      setError(
+        "Password must be Minimum eight characters, at least one letter and one number"
+      );
+      form.reset();
+      return;
+    }
     createUser(email, password)
       .then((result) => {
         const createdUser = result.user;
-        console.log(createdUser);
         navigate("/");
       })
       .catch((error) => {
-        console.log(error);
+        console.log(error.message);
       });
   };
 
@@ -31,6 +39,9 @@ const Register = () => {
       <h2 className="text-4xl font-semibold text-center mt-20 mb-12">
         Sign Up
       </h2>
+      <p className="text-center mb-4 text-red-500">
+        <small>{error}</small>
+      </p>
       <form onSubmit={handleRegister} className="text-center">
         <input
           className="bg-gray-200 text-gray-800 pl-3 pr-24 py-3"

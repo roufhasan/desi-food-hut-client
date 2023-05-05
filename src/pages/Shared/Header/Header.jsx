@@ -8,7 +8,7 @@ const Header = () => {
   const handleLogOut = () => {
     logOut()
       .then()
-      .catcht((error) => console.log(error));
+      .catcht((error) => console.log(error.message));
   };
   return (
     <div className="max-w-[1440px] px-[4%] mx-auto mt-2 mb-6">

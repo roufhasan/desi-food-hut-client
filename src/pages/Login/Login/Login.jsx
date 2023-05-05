@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 import { FaGithub, FaGoogle } from "react-icons/fa";
@@ -6,6 +6,7 @@ import { FaGithub, FaGoogle } from "react-icons/fa";
 const Login = () => {
   const { signIn, signInWithGoogle, signInWithGithub } =
     useContext(AuthContext);
+  const [error, setError] = useState("");
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -23,14 +24,17 @@ const Login = () => {
         const loggedUser = result.user;
         navigate(from, { replace: true });
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        const errorMessage = error.message;
+        setError(errorMessage);
+        console.log(errorMessage);
+      });
   };
 
   const handleGoogleLogin = () => {
     signInWithGoogle()
       .then((result) => {
         const loggedUser = result.user;
-        console.log(loggedUser);
         navigate(from, { replace: true });
       })
       .catch((error) => {
@@ -46,7 +50,8 @@ const Login = () => {
         navigate(from, { replace: true });
       })
       .catch((error) => {
-        console.log(error);
+        const errorMessage = error.message;
+        console.log(errorMessage);
       });
   };
 
@@ -79,6 +84,9 @@ const Login = () => {
         </button>
       </form>
       <div className="mt-6">
+        <p className="text-center text-red-500">
+          <small>{error}</small>
+        </p>
         <div className="divider">OR</div>
         <div className="text-3xl flex gap-x-5 justify-center">
           <button
