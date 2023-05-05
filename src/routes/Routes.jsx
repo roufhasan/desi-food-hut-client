@@ -38,7 +38,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/chefsRecipe/${params.id}`),
+          fetch(
+            `https://desi-food-hut-server-roufhasan.vercel.app/chefsRecipe/${params.id}`
+          ),
       },
     ],
   },
