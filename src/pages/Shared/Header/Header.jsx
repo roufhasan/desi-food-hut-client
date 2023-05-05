@@ -42,7 +42,7 @@ const Header = () => {
                 <Link to="/blog">Blog</Link>
               </li>
               <li>
-                <a>Item 3</a>
+                <a>About Us</a>
               </li>
             </ul>
           </div>
@@ -80,7 +80,7 @@ const Header = () => {
                   isActive ? "text-green-500 font-bold" : "text-black"
                 }
               >
-                Item 3
+                About Us
               </NavLink>
             </li>
           </ul>
