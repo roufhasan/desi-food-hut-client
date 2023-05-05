@@ -10,7 +10,6 @@ const Header = () => {
       .then()
       .catcht((error) => console.log(error));
   };
-  console.log(user);
   return (
     <div className="max-w-[1440px] px-[4%] mx-auto mt-2 mb-6">
       <div className="navbar bg-base-100">

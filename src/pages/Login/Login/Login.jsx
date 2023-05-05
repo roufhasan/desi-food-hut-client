@@ -84,10 +84,18 @@ const Login = () => {
       <div className="mt-6">
         <div className="divider">OR</div>
         <div className="text-3xl flex gap-x-5 justify-center">
-          <button onClick={handleGoogleLogin}>
+          <button
+            className="avatar tooltip"
+            data-tip="Login With Google"
+            onClick={handleGoogleLogin}
+          >
             <FaGoogle></FaGoogle>
           </button>
-          <button onClick={handleGithubLogin}>
+          <button
+            className="avatar tooltip"
+            data-tip="Login With GitHub"
+            onClick={handleGithubLogin}
+          >
             <FaGithub></FaGithub>
           </button>
         </div>

@@ -1,0 +1,9 @@
+#chefs-details {
+  background: linear-gradient(
+      to right,
+      rgba(53, 45, 40, 0.507),
+      rgba(53, 45, 40, 0.507)
+    ),
+    url(../../assets/about-bg.jpg);
+  object-fit: cover;
+}

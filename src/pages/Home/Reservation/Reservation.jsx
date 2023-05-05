@@ -8,7 +8,7 @@ const Reservation = () => {
         Reserve Your Table Now
       </h2>
       <div
-        className="max-w-[1440px] px-[4%] mx-auto mt-12 mb-6 flex justify-between"
+        className="max-w-[1440px] px-[4%] mx-auto mt-12 mb-6 lg:flex justify-between"
         id="reservation"
       >
         <div className="flex items-center">
@@ -17,10 +17,10 @@ const Reservation = () => {
             <br /> Your Family
           </h3>
         </div>
-        <div className="w-1/2 p-10 text-center">
+        <div className="lg:w-1/2 lg:p-10 mt-12 md:mt-0 text-center">
           <form>
             <input
-              className="border-black border px-9 py-3 rounded-lg"
+              className="border-black border px-2 py-3 rounded-lg"
               type="text"
               name="name"
               id="name"
@@ -28,7 +28,7 @@ const Reservation = () => {
             />
             <br />
             <input
-              className="border-black border my-3 px-9 py-3 rounded-lg"
+              className="border-black border my-3 px-2 py-3 rounded-lg"
               type="email"
               name="email"
               id="email"
@@ -36,7 +36,7 @@ const Reservation = () => {
             />
             <br />
             <input
-              className="border-black border px-9 py-3 rounded-lg"
+              className="border-black border px-1 py-3 rounded-lg"
               type="text"
               name="phone"
               id="phone"
@@ -44,7 +44,7 @@ const Reservation = () => {
             />
             <br />
             <input
-              className="border-black border my-3 px-9 py-3 rounded-lg"
+              className="border-black border my-3 px-2 py-3 rounded-lg"
               type="text"
               name="date"
               id="date"
@@ -52,7 +52,7 @@ const Reservation = () => {
             />
             <br />
             <input
-              className="border-black border px-9 py-3 rounded-lg"
+              className="border-black border px-2 py-3 rounded-lg"
               type="text"
               name="time"
               id="time"

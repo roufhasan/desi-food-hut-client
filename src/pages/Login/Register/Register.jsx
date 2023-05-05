@@ -45,7 +45,7 @@ const Register = () => {
           type="email"
           name="email"
           id="email"
-          placeholder="Please input your email"
+          placeholder="Email"
           required
         />
         <br />
@@ -54,7 +54,7 @@ const Register = () => {
           type="password"
           name="password"
           id="password"
-          placeholder="password"
+          placeholder="Passoword"
           required
         />
         <br />
@@ -63,7 +63,7 @@ const Register = () => {
           type="text"
           name="photoUrl"
           id="photUrl"
-          placeholder="Photo Link"
+          placeholder="Photo URL"
           required
         />
         <br />
